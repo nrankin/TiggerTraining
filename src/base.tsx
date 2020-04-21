@@ -1,66 +1,50 @@
 // import React from 'react'
 import * as ReactNative from 'react-native'
-import {View, ViewProps} from 'react-native'
 import styled from 'styled-components/native'
 import {
-  compose,
-  space,
-  SpaceProps,
   color,
+  compose,
   ColorProps,
-  layout,
-  LayoutProps,
-  typography,
-  TypographyProps,
-  flexbox,
-  FlexboxProps,
   border,
   BorderProps,
   background,
   BackgroundProps,
-  position,
-  PositionProps,
-  grid,
-  GridProps,
-  shadow,
-  ShadowProps,
+  flexbox,
+  FlexboxProps,
+  space,
+  SpaceProps,
+  typography,
+  TypographyProps,
 } from 'styled-system'
 
 export interface BaseKnownProps
-  extends BackgroundProps,
+  extends ColorProps,
+    BackgroundProps,
     BorderProps,
-    ColorProps,
     FlexboxProps,
-    GridProps,
-    LayoutProps,
-    PositionProps,
-    ShadowProps,
     SpaceProps,
     TypographyProps {}
 
 export const baseSystem = compose(
-  space,
   background,
   border,
   color,
   flexbox,
-  grid,
-  layout,
-  position,
-  shadow,
+  space,
   typography,
 )
 
-export type BaseProps<T = View> = BaseKnownProps & Omit<T, keyof BaseKnownProps>
+export type BaseProps<T = ReactNative.ViewProps> = BaseKnownProps &
+  Omit<T, keyof BaseKnownProps>
 
-export type BoxProps = BaseProps<ViewProps>
-export const Box = styled.View<BoxProps>(baseSystem)
+export type ViewProps = BaseProps<ReactNative.ViewProps>
+export const View = styled.View<ViewProps>(baseSystem)
 
-export type TextProps = BaseProps<Text>
+export type TextProps = BaseProps<ReactNative.TextProps>
 export const Text = styled.Text<TextProps>(baseSystem)
 
-export type ButtonProps = BaseProps<ReactNative.Button>
+export type ButtonProps = BaseProps<ReactNative.ButtonProps>
 export const Button = styled.Button<ButtonProps>(baseSystem)
 
-export type ImageProps = BaseProps<ReactNative.Image>
+export type ImageProps = BaseProps<ReactNative.ImageProps>
 export const Image = styled.Image<ImageProps>(baseSystem)

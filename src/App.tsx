@@ -10,36 +10,38 @@
 
 import React from 'react'
 
-import {ThemeProvider} from 'styled-components/native'
-import theme from './theme'
-import {View, Text, Button, Image} from './base'
-import {Header} from './components/hellostyledworld'
-import Behaviors from './behaviors'
-import {Alert} from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
+
+import HomeScreen from './screens/HomeScreen'
+import IndependenceScreen from './screens/IndependenceScreen'
+import Greeting from './screens/GreetingScreen'
+
+type RootStackParamList = {
+  Home: undefined
+  Independence: undefined
+  Greeting: undefined
+  // other examples:
+  // Profile: { userId: string };
+  // Feed: { sort: 'latest' | 'top' } | undefined;
+}
+
+const RootStack = createStackNavigator<RootStackParamList>()
 
 const App = () => {
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      <Image
-        flex={3}
-        source={require('./images/tigga-headshot-main.jpg')}
-        // eslint-disable-next-line react-native/no-inline-styles
-        style={{height: 500, width: 420}}
-      />
-      <View flex={2.5} backgroundColor="red">
-        <Text fontSize={36} paddingY={20} paddingX={20}>
-          Training:
-        </Text>
-        <Behaviors />
-      </View>
-      <View flex={0.5} marginY={60}>
-        <Button
-          title="Ko wai he kuri pai?"
-          onPress={() => Alert.alert('Ko koe e Tigger!')}
-        />
-      </View>
-    </ThemeProvider>
+    <NavigationContainer>
+      {
+        <RootStack.Navigator>
+          <RootStack.Screen name="Home" component={HomeScreen} />
+          <RootStack.Screen
+            name="Independence"
+            component={IndependenceScreen}
+          />
+          <RootStack.Screen name="Greeting" component={Greeting} />
+        </RootStack.Navigator>
+      }
+    </NavigationContainer>
   )
 }
 

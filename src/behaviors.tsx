@@ -5,10 +5,11 @@ import {Text, View} from './base'
 
 const Behaviors = (props) => (
   <Container>
+    <Name>Independence</Name>
     <Name>Heeling</Name>
-    <Name>Selective Chewing</Name>
     <Name>Greeting</Name>
     <Name>Recall</Name>
+    <Name>Hugs</Name>
   </Container>
 )
 

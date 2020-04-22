@@ -33,7 +33,7 @@ const App = () => {
         </Text>
         <Behaviors />
       </View>
-      <View flex={1} marginY={60}>
+      <View flex={0.5} marginY={60}>
         <Button
           title="Ko wai he kuri pai?"
           onPress={() => Alert.alert('Ko koe e Tigger!')}

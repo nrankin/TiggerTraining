@@ -1,10 +1,9 @@
 import React from 'react'
 
 import {ThemeProvider} from 'styled-components/native'
-import theme from '../theme'
-import {View, Text, Button, Image} from '../base'
-import {Header} from '../components/hellostyledworld'
-import {Alert} from 'react-native'
+import theme from '../../theme'
+import {View, Text, Button, Image} from '../../base'
+import {Header} from '../../components/hellostyledworld'
 
 export default function HomeScreen({navigation}) {
   return (
@@ -12,7 +11,7 @@ export default function HomeScreen({navigation}) {
       <Header text="Haere mai e Tigger" />
       <Image
         flex={4}
-        source={require('../images/tigga-headshot-main.jpg')}
+        source={require('../../images/tigga-headshot-main.jpg')}
         // eslint-disable-next-line react-native/no-inline-styles
         style={{height: 500, width: 420}}
       />

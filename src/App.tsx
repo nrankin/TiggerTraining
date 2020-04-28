@@ -13,9 +13,9 @@ import React from 'react'
 import {NavigationContainer} from '@react-navigation/native'
 import {createStackNavigator} from '@react-navigation/stack'
 
-import HomeScreen from './screens/HomeScreen'
-import IndependenceScreen from './screens/IndependenceScreen'
-import Greeting from './screens/GreetingScreen'
+import HomeScreen from './screens/main/HomeScreen'
+import IndependenceScreen from './screens/main/IndependenceScreen'
+import Greeting from './screens/main/GreetingScreen'
 
 type RootStackParamList = {
   Home: undefined

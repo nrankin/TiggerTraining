@@ -19,6 +19,7 @@ export default function HomeScreen({navigation}) {
         <Text fontSize={36} paddingY={20} paddingX={20}>
           Training:
         </Text>
+
         <Button
           color="black"
           title="Independence Training"

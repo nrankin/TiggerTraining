@@ -2,7 +2,7 @@ import React from 'react'
 
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../../theme'
-import {View, Text, Button, Image} from '../../base'
+import {Text} from '../../base'
 import {Header} from '../../components/hellostyledworld'
 
 import NightTimeIndependence from '../NightTimeIndependence'
@@ -10,24 +10,31 @@ import DayTimeIndependence from '../DayTimeIndependence'
 // import {createStackNavigator} from '@react-navigation/stack'
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs'
 
-// const IndependenceStack = createStackNavigator()
-const IndependenceStack = createBottomTabNavigator()
+type IndependenceParamList = {
+  Night: {dogName: string} | undefined
+  Day: undefined
+}
+const IndependenceBottomTab = createBottomTabNavigator<IndependenceParamList>()
 
-export default function IndependenceScreen({navigation}) {
+export default function IndependenceScreen({route}) {
+  const {dogName} = route.params
+  const header = 'Independence Training for ' + dogName
   return (
     <ThemeProvider theme={theme}>
-      <Header text="Independence Training" />
-      <IndependenceStack.Navigator>
-        <IndependenceStack.Screen
+      <Header text={header} />
+      <IndependenceBottomTab.Navigator>
+        <IndependenceBottomTab.Screen
           name="Night"
           component={NightTimeIndependence}
           options={{title: 'Night Time'}}
+          initialParams={{dogName: dogName}}
         />
-        <IndependenceStack.Screen
-          name="Day Time"
+        <IndependenceBottomTab.Screen
+          name="Day"
           component={DayTimeIndependence}
+          options={{title: 'Day Time'}}
         />
-      </IndependenceStack.Navigator>
+      </IndependenceBottomTab.Navigator>
     </ThemeProvider>
   )
 }

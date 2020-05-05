@@ -6,6 +6,8 @@ import {View, Text, Button, Image} from '../../base'
 import {Header} from '../../components/hellostyledworld'
 
 export default function HomeScreen({navigation}) {
+  const DogName = 'Tigger'
+
   return (
     <ThemeProvider theme={theme}>
       <Header text="Haere mai e Tigger" />
@@ -23,7 +25,9 @@ export default function HomeScreen({navigation}) {
         <Button
           color="black"
           title="Independence Training"
-          onPress={() => navigation.navigate('Independence')}
+          onPress={() =>
+            navigation.navigate('Independence', {dogName: DogName})
+          }
         />
         <Button
           color="black"

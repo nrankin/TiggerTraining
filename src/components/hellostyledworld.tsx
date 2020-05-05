@@ -3,7 +3,7 @@ import styled from 'styled-components/native'
 import theme from '../theme'
 import {View, Text} from '../base'
 
-const HeaderView = styled(View)({backgroundColor: theme.colors.lightGrey})
+const HeaderView = styled(View)({backgroundColor: theme.colors.lightBlue})
 
 const StyledText = styled(Text)({
   color: theme.colors.black,

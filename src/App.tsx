@@ -17,18 +17,16 @@ import HomeScreen from './screens/main/HomeScreen'
 import IndependenceScreen from './screens/main/IndependenceScreen'
 import Greeting from './screens/main/GreetingScreen'
 
-type RootStackParamList = {
+export type RootStackParamList = {
   Home: undefined
-  Independence: undefined
+  Independence: {dogName: string} | undefined
   Greeting: undefined
-  // other examples:
-  // Profile: { userId: string };
-  // Feed: { sort: 'latest' | 'top' } | undefined;
 }
 
 const RootStack = createStackNavigator<RootStackParamList>()
 
 const App = () => {
+  const dogName: string = 'Tigger'
   return (
     <NavigationContainer>
       {
@@ -37,6 +35,7 @@ const App = () => {
           <RootStack.Screen
             name="Independence"
             component={IndependenceScreen}
+            initialParams={{dogName: dogName}}
           />
           <RootStack.Screen name="Greeting" component={Greeting} />
         </RootStack.Navigator>

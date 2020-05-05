@@ -4,6 +4,7 @@ interface Colors {
   white: string
   blue: string
   navy: string
+  lightBlue: string
 }
 
 export const colors: Colors = {
@@ -11,6 +12,7 @@ export const colors: Colors = {
   lightGrey: '#bcbece',
   white: '#fff',
   blue: '#007ce0',
+  lightBlue: '#099ce9',
   navy: '#000e1a',
 }
 

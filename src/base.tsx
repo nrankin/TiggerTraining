@@ -48,3 +48,6 @@ export const Button = styled.Button<ButtonProps>(baseSystem)
 
 export type ImageProps = BaseProps<ReactNative.ImageProps>
 export const Image = styled.Image<ImageProps>(baseSystem)
+
+// export type FlatListProps = BaseProps<ViewProps>
+// export const FlatList = styled(ReactNative.FlatList)<FlatListProps>(baseSystem)

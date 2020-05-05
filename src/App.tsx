@@ -10,36 +10,37 @@
 
 import React from 'react'
 
-import {ThemeProvider} from 'styled-components/native'
-import theme from './theme'
-import {View, Text, Button, Image} from './base'
-import {Header} from './components/hellostyledworld'
-import Behaviors from './behaviors'
-import {Alert} from 'react-native'
+import {NavigationContainer} from '@react-navigation/native'
+import {createStackNavigator} from '@react-navigation/stack'
+
+import HomeScreen from './screens/main/HomeScreen'
+import IndependenceScreen from './screens/main/IndependenceScreen'
+import Greeting from './screens/main/GreetingScreen'
+
+export type RootStackParamList = {
+  Home: undefined
+  Independence: {dogName: string} | undefined
+  Greeting: undefined
+}
+
+const RootStack = createStackNavigator<RootStackParamList>()
 
 const App = () => {
+  const dogName: string = 'Tigger'
   return (
-    <ThemeProvider theme={theme}>
-      <Header />
-      <Image
-        flex={3}
-        source={require('./images/tigga-headshot-main.jpg')}
-        // eslint-disable-next-line react-native/no-inline-styles
-        style={{height: 500, width: 420}}
-      />
-      <View flex={2.5} backgroundColor="red">
-        <Text fontSize={36} paddingY={20} paddingX={20}>
-          Training:
-        </Text>
-        <Behaviors />
-      </View>
-      <View flex={1} marginY={60}>
-        <Button
-          title="Ko wai he kuri pai?"
-          onPress={() => Alert.alert('Ko koe e Tigger!')}
-        />
-      </View>
-    </ThemeProvider>
+    <NavigationContainer>
+      {
+        <RootStack.Navigator>
+          <RootStack.Screen name="Home" component={HomeScreen} />
+          <RootStack.Screen
+            name="Independence"
+            component={IndependenceScreen}
+            initialParams={{dogName: dogName}}
+          />
+          <RootStack.Screen name="Greeting" component={Greeting} />
+        </RootStack.Navigator>
+      }
+    </NavigationContainer>
   )
 }
 

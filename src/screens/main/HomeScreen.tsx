@@ -3,14 +3,14 @@ import React from 'react'
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../../theme'
 import {View, Text, Button, Image} from '../../base'
-import {Header} from '../../components/hellostyledworld'
+import {LargeHeader} from '../../components/header'
 
 export default function HomeScreen({navigation}) {
   const DogName = 'Tigger'
 
   return (
     <ThemeProvider theme={theme}>
-      <Header text="Haere mai e Tigger" />
+      <LargeHeader text="Haere mai e Tigger" />
       <Image
         flex={4}
         source={require('../../images/tigga-headshot-main.jpg')}

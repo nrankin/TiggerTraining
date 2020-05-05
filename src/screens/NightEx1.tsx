@@ -2,7 +2,7 @@ import React from 'react'
 
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../theme'
-import {Header} from '../components/hellostyledworld'
+import {SmallHeader} from '../components/header'
 import ExerciseInstructions from '../components/ExerciseInstructions'
 
 import {RouteProp} from '@react-navigation/native'
@@ -28,7 +28,7 @@ export default function NightEx1({route, navigation}: Props) {
   const header = 'Crate Training for ' + dogName
   return (
     <ThemeProvider theme={theme}>
-      <Header text={header} />
+      <SmallHeader text={header} />
       <ExerciseInstructions
         description="For quiet during the night, actually train her during the day initially."
         steps={EXERCISE_STEPS}

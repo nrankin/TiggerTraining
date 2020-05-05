@@ -3,7 +3,7 @@ import React from 'react'
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../theme'
 import {View, Text, Button, Image} from '../base'
-import {Header} from '../components/hellostyledworld'
+import {Header} from '../components/header'
 import {Alert} from 'react-native'
 
 export default function IndependenceScreen({navigation}) {

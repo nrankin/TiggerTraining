@@ -3,7 +3,7 @@ import React from 'react'
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../theme'
 import {View} from '../base'
-import {Header} from '../components/hellostyledworld'
+import {SmallHeader} from '../components/header'
 
 import ExerciseInstructions from '../components/ExerciseInstructions'
 
@@ -16,7 +16,7 @@ const EXERCISE_STEPS = [
 export default function NightEx2({route}) {
   return (
     <ThemeProvider theme={theme}>
-      <Header text="Snuggle Training" />
+      <SmallHeader text="Snuggle Training" />
       <ExerciseInstructions
         description="For a lovely life"
         steps={EXERCISE_STEPS}

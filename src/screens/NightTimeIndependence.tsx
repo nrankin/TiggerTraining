@@ -8,6 +8,7 @@ import {createStackNavigator} from '@react-navigation/stack'
 import NightEx1 from './NightEx1'
 import NightEx2 from './NightEx2'
 import NightEx3 from './NightEx3'
+import {SmallHeader} from '../components/header'
 
 export type NightParamList = {
   NightEx1: {dogName: string} | undefined
@@ -20,12 +21,12 @@ const NightStack = createStackNavigator<NightParamList>()
 export default function IndependenceScreen({route, navigation}) {
   //   const dogName: string = route.params.dogName
   const {dogName} = route.params
+  const header = 'Expected Outcomes for' + {dogName}
   return (
     <ThemeProvider theme={theme}>
       <View backgroundColor="lightGrey">
-        <Text fontSize={4} paddingY={20} paddingX={20}>
-          Expected Outcomes for {dogName}:
-        </Text>
+        <SmallHeader text={header} />
+
         <Text paddingBottom={2} alignSelf="center">
           * relaxed in their crate *
         </Text>

@@ -3,7 +3,7 @@ import React from 'react'
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../../theme'
 import {Text} from '../../base'
-import {Header} from '../../components/hellostyledworld'
+import {LargeHeader} from '../../components/header'
 
 import NightTimeIndependence from '../NightTimeIndependence'
 import DayTimeIndependence from '../DayTimeIndependence'
@@ -17,11 +17,11 @@ type IndependenceParamList = {
 const IndependenceBottomTab = createBottomTabNavigator<IndependenceParamList>()
 
 export default function IndependenceScreen({route}) {
-  const {dogName} = route.params
+  const dogName: string = route.params.dogName
   const header = 'Independence Training for ' + dogName
   return (
     <ThemeProvider theme={theme}>
-      <Header text={header} />
+      <LargeHeader text={header} />
       <IndependenceBottomTab.Navigator>
         <IndependenceBottomTab.Screen
           name="Night"

@@ -4,7 +4,7 @@ import {ThemeProvider} from 'styled-components/native'
 import theme from '../theme'
 
 import ExerciseInstructions from '../components/ExerciseInstructions'
-import {Header} from '../components/hellostyledworld'
+import {SmallHeader} from '../components/header'
 
 const EXERCISE_STEPS = [
   {
@@ -22,7 +22,7 @@ const EXERCISE_STEPS = [
 export default function NightEx3({navigation}) {
   return (
     <ThemeProvider theme={theme}>
-      <Header text="Toilet Training" />
+      <SmallHeader text="Toilet Training" />
       <ExerciseInstructions
         description="For a clean home. Dogs won't soil their den. Make her crate like a den and she will be unlikely to soil in there. This is one of the biggest advantages of crate training."
         steps={EXERCISE_STEPS}

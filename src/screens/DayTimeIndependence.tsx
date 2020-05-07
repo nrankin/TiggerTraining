@@ -3,13 +3,13 @@ import React from 'react'
 import {ThemeProvider} from 'styled-components/native'
 import theme from '../theme'
 import {View, Text, Button, Image} from '../base'
-import {Header} from '../components/header'
+import {MediumHeader} from '../components/header'
 import {Alert} from 'react-native'
 
 export default function IndependenceScreen({navigation}) {
   return (
     <ThemeProvider theme={theme}>
-      <Header text="Day Time" />
+      <MediumHeader text="Day Time" />
       <View flex={3} backgroundColor="lightGrey">
         <Text fontSize={4} paddingY={20} paddingX={20}>
           Expected Outcomes:

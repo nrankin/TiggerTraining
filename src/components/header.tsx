@@ -38,7 +38,7 @@ export function SmallHeader(props: HeaderProps): React.ReactElement {
   const {text} = props
   return (
     <View padding={2}>
-      <StyledText fontSize={3}>{text}</StyledText>
+      <StyledText fontSize={2}>{text}</StyledText>
     </View>
   )
 }
